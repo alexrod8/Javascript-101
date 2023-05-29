@@ -3,13 +3,14 @@ const input = require('readline-sync');
 const correctPassword = '12262003';
 
 function answer() {
-let text = input.question('What is your username: ');
-console.log('Hi alex !');
-let text2 = input.question('Password: ')
-if(text2 === correctPassword ) {
-  console.log('Welcome in Alex!');
+let username = input.question('What is your username: ');
+console.log('Hi ' + username);
+let password = input.question('Password: ')
+if(password === correctPassword ) {
+  console.log('Welcome in ' + username);
 } else
-   console.log('incorrect');
+   console.log('Incorrect!');
+   input.question('Try again: ')
 }
 
 answer();
