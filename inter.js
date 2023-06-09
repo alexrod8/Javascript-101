@@ -7,10 +7,16 @@ const input = require("readline-sync");
 
 function program() {
   let interger = input.question("Please enter an integer greater than 0: ");
-  
-  let answer = input.question(
-    'Enter "s" to compute the sum, or "p" to compute the product: ');
 
+  let answer = input.question(
+    'Enter "s" to compute the sum, or "p" to compute the product: '
+  );
+  while(! ['s', 'p'].includes(answer)) {
+    console.log("Please enter p or s! ");
+    answer = input.question(
+      'Enter "s" to compute the sum, or "p" to compute the product: '
+    );
+  }
 
   let sum = 0;
   let product = 1;
@@ -23,17 +29,17 @@ function program() {
       "The sum of the integers between 1 " + "and " + interger + " is " + sum
     );
   }
-   else if (answer === "p") {
+  if (answer === "p") {
     for (let i = 1; i <= interger; i++) {
       product *= i;
     }
     console.log(
-      "The product of the integers between 1 " + "and " + interger + " is " + product
+      "The product of the integers between 1 " +
+        "and " +
+        interger +
+        " is " +
+        product
     );
-  } else {
-   console.log('Please enter p or s! ');
-   input.question(
-    'Enter "s" to compute the sum, or "p" to compute the product: ')
   }
 }
 
