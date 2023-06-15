@@ -3,7 +3,7 @@
 
 function getGrade(num1, num2, num3) {
   let average = (num1 + num2 + num3) / 3;
-  if (average > 90 && average <= 100) {
+  if (average >=  90 && average <= 100) {
     return "A";
   } else if (average >= 80 && average < 90) {
     return "B";
@@ -13,12 +13,12 @@ function getGrade(num1, num2, num3) {
     return "D";
   } else {
     return "F";
-  }
+  }``
 }
 console.log(getGrade(95, 90, 93)); // "A"
 console.log(getGrade(70, 81, 90)); // "B"
 console.log(getGrade(70, 76, 80)); // "C"
 console.log(getGrade(50, 50, 95)); // "D"
-console.log(getGrade(60, 40, 65)); // "F"
+console.log(getGrade(63, 60, 52)); // "F"
 
 
